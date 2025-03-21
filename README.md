@@ -27,6 +27,8 @@ Testing the webserver.
 
 # PROGRAM:
 ```
+web.py
+
 from http.server import HTTPServer, BaseHTTPRequestHandler
 content = """
 <html>
@@ -78,6 +80,18 @@ server_address = ('',8000)
 httpd = HTTPServer(server_address,myhandler)
 print("my webserver is running...")
 httpd.serve_forever()
+
+
+urls.py
+
+from django.contrib import admin
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+
+]
+
 ```
 # OUTPUT
 
